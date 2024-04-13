@@ -2,16 +2,17 @@ public class Hora {
     private int hora;
     private int minutos;
     private int segundos;
-    public Hora(int hora, int minutos, int segundos){
+    public Hora(String Hora, String Minutos, String Segundos){
+        hora=Integer.parseInt(Hora);
+        minutos=Integer.parseInt(Minutos);
+        segundos=Integer.parseInt(Segundos);
         if(hora>23 || minutos>59 || segundos>59){
             hora=0;
             minutos=0;
             segundos=0;
     }
     else{
-        this.hora=hora;
-        this.minutos=minutos;
-        this.segundos=segundos;
+        System.out.println("Hora válida");
     }
 }
 
