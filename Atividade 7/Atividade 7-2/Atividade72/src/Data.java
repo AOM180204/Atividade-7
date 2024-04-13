@@ -1,39 +1,37 @@
-import javax.swing.JOptionPane;
-
 public class Data {
     String[] meses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "junho", "julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
-    private int Dia;
+    private int dia;
     private int mês;
     private int ano;
-    public Data(){
-        Dia=Integer.parseInt(JOptionPane.showInputDialog("Insira o dia atual"));
-        mês=Integer.parseInt(JOptionPane.showInputDialog("Insira o mês atual"));
-        ano=Integer.parseInt(JOptionPane.showInputDialog("Insira o ano atual"));
-        if(Dia==31 && mês%2==0){
+    public Data(String Dia, String mes, String Ano){
+        dia=Integer.parseInt(Dia);
+        mês=Integer.parseInt(mes);
+        ano=Integer.parseInt(Ano);
+        if(dia==31 && mês%2==0 && mês<8){
             if(mês==8){
 
             }
             else{
-                Dia=1;
+                dia=1;
                 mês=1;
                 ano=1;
             }
         }
-        if(Dia==30 && mês==2){
-                Dia=1;
+        if(dia==30 && mês==2){
+                dia=1;
                 mês=1;
                 ano=1;
         }
-        if(Dia>31 || mês>12 || ano<1){
-                Dia=1;
+        if(dia>31 || mês>12 || ano<1){
+                dia=1;
                 mês=1;
                 ano=1;
         }
     }
 
     public int getDia(){
-        System.out.println(Dia);
-        return Dia;
+        System.out.println(dia);
+        return dia;
     }
     public int getMes(){
         System.out.println(mês);
@@ -49,10 +47,10 @@ public class Data {
     public int compara(Data objeto){
         if(objeto.ano==ano){
             if(objeto.mês==mês){
-                if(objeto.Dia==Dia){
+                if(objeto.dia==dia){
                     System.out.println(0);
                     return 0;
-                }else if(objeto.Dia<Dia){
+                }else if(objeto.dia<dia){
                     System.out.println(1);
                     return 1;
                 }
